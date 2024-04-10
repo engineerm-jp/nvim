@@ -29,10 +29,10 @@ map("t", "<C-k>", "<C-\\><C-N><C-w-k>", { desc = "Terminal Escape terminal mode 
 map("t", "<C-l>", "<C-\\><C-N><C-w-l>", { desc = "Terminal Escape terminal mode and move right" })
 
 
-map("n", "<A-j>", "<C-w>-3", {desc = "Decrease current window hight"})
-map("n", "<A-k>", "<C-w>+3", {desc = "Increase current window hight"})
-map("n", "<A-h>", "<C-w><3", {desc = "Decrease current window hight"})
-map("n", "<A-l>", "<C-w>>3", {desc = "Increase current window hight"})
+map("n", "<A-j>", "<C-w>-3", {desc = "Decrease current window height"})
+map("n", "<A-k>", "<C-w>+3", {desc = "Increase current window height"})
+map("n", "<A-h>", "<C-w><3", {desc = "Decrease current window width"})
+map("n", "<A-l>", "<C-w>>3", {desc = "Increase current window width"})
 
 
 map({ "n", "t" }, "<leader>v", function()
