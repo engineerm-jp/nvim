@@ -51,4 +51,4 @@ end, { desc = "Terminal Toggle Floating term" })
 map("n", "cl", "s")
 map("n", "cc", "S")
 
--- option.shiftwidth = 4
+option.shiftwidth = 4
