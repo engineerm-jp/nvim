@@ -17,7 +17,7 @@ map("n", "<leader>+", "<C-a>", {desc = "Increment number"})
 map("n", "<leader>-", "<C-x>", {desc = "Decrement number"})
 
 map("n", "<leader>sv", "<c-w>v", {desc = "Split window vertically"})
-map("n", "<leader>ss", "<c-w>s", {desc = "Split window horizontally"})
+map("n", "<leader>sh", "<c-w>s", {desc = "Split window horizontally"})
 map("n", "<leader>se", "<c-w>=", {desc = "Equal split"})
 map("n", "<leader>sx", "<cmd>close<cr>", {desc = "close surrent split"})
 
@@ -52,3 +52,10 @@ map("n", "cl", "s")
 map("n", "cc", "S")
 
 option.shiftwidth = 4
+
+-- set wrap
+option.wrap = true
+
+
+map("n", "<leader>gs", '<Plug>(leap-from-window)', {desc = "Leap search from window"})
+map("n", "s", '<Plug>(leap)', {desc = "Leap search"})
