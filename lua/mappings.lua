@@ -47,15 +47,16 @@ map({ "n", "t" }, "<leader>t", function()
   require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
 end, { desc = "Terminal Toggle Floating term" })
 
+-- TAB length
+option.shiftwidth = 4
 
+-- custom key mappings for leap
 map("n", "cl", "s")
 map("n", "cc", "S")
 
-option.shiftwidth = 4
-
--- set wrap
-option.wrap = true
-
-
 map("n", "<leader>gs", '<Plug>(leap-from-window)', {desc = "Leap search from window"})
-map("n", "s", '<Plug>(leap)', {desc = "Leap search"})
+map("n", "s", '<Plug>(leap)', {desc = "Leap search (both directions)"})
+
+
+map("n", "<leader>e", "$", {desc = "Move to the end of line"})
+map("n", "<leader><S-e>", "0", {desc = "Move to the start of line"})
