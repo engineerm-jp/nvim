@@ -60,3 +60,13 @@ map("n", "s", '<Plug>(leap)', {desc = "Leap search (both directions)"})
 
 map("n", "<leader>e", "$", {desc = "Move to the end of line"})
 map("n", "<leader><S-e>", "0", {desc = "Move to the start of line"})
+
+-- custom key mappings for copilot
+map("i", "<A-s>", "<Plug>(copilot-suggest)", {desc = "Copilot suggest"})
+map("i", "<A-d>", "<Plug>(copilot-dismiss)", {desc = "Copilot dismiss"})
+map("i", "<A-n>", "<Plug>(copilot-next)", {desc = "Copilot next"})
+map("i", "<A-p>", "<Plug>(copilot-previous)", {desc = "Copilot previous"})
+map("i", "<A-w>", "<Plug>(copilot-accept-word)", {desc = "Copilot accept"})
+map("i", "<A-l>", "<Plug>(copilot-accept-line)", {desc = "Copilot accept line"})
+
+

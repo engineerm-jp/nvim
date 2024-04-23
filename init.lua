@@ -5,7 +5,7 @@ vim.g.mapleader = " "
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
-  local sepo = "https://github.com/folke/lazy.nvim.git"
+  local repo = "https://github.com/folke/lazy.nvim.git"
   vim.fn.system {
     "git",
     "clone",
@@ -45,4 +45,10 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+-- custom settings for LaTex files
+vim.api.nvim_exec([[
+    autocmd FileType tex setlocal wrap | setlocal breakindent
+]], false)
+
 
