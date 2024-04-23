@@ -1,8 +1,6 @@
-function latex_settings()
-    vim.wo.wrap = true
-    vim.wo.breakindent = true
-end
-
+-- custom settings for LaTex files
 vim.api.nvim_exec([[
-    autocmd FileType tex lua latex_settings() 
+    autocmd FileType tex setlocal wrap | setlocal breakindent
 ]], false)
+
+
