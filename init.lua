@@ -47,3 +47,5 @@ vim.schedule(function()
 end)
 
 require("custom.tex")
+require('custom.custom-colour')
+
