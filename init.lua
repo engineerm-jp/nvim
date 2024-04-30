@@ -48,4 +48,5 @@ end)
 
 require("custom.tex")
 require('custom.custom-colour')
-
+-- require('custom.color-scheme')
+-- require('custom.fold')

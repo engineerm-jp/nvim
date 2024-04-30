@@ -5,8 +5,8 @@ require "nvchad.mappings"
 local map = vim.keymap.set
 local option = vim.opt
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "jk", "<ESC>")
+map("n", ";", ":", { desc = "cmd enter command mode" })
+map("i", "jk", "<esc>")
 map("n", "<leader>nh", "<cmd>noh<CR>", {desc = "Delete highlight"})
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
@@ -20,7 +20,6 @@ map("n", "<leader>sv", "<c-w>v", {desc = "Split window vertically"})
 map("n", "<leader>sh", "<c-w>s", {desc = "Split window horizontally"})
 map("n", "<leader>se", "<c-w>=", {desc = "Equal split"})
 map("n", "<leader>sx", "<cmd>close<cr>", {desc = "close surrent split"})
-
 
 
 map("t", "<C-h>", "<C-\\><C-N><C-w-h>", { desc = "Terminal Escape terminal mode and move left" })
@@ -68,5 +67,16 @@ map("i", "<A-n>", "<Plug>(copilot-next)", {desc = "Copilot next"})
 map("i", "<A-p>", "<Plug>(copilot-previous)", {desc = "Copilot previous"})
 map("i", "<A-w>", "<Plug>(copilot-accept-word)", {desc = "Copilot accept"})
 map("i", "<A-l>", "<Plug>(copilot-accept-line)", {desc = "Copilot accept line"})
+
+-- custom keys for folding
+map("n", "<leader>op", "zo", {desc = "Fold open"})
+map("n", "<leader>cl", "zc", {desc = "Fold close"})
+
+-- custom keys for indentation
+map({"n", "v"}, "<leader>ih", "< ", {desc = "Indent - Left"})
+map({"n", "v"}, "<leader>il", "> ", {desc = "Indent - Right"})
+
+
+
 
 
