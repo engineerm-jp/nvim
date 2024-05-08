@@ -10,7 +10,7 @@ map("i", "jk", "<esc>")
 map("n", "<leader>nh", "<cmd>noh<CR>", {desc = "Delete highlight"})
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
-map("v", "ji", "<ESC>")
+map("v", "<leader>jk", "<ESC>")
 -- require('leap').create_default_mappings()
 
 map("n", "<leader>+", "<C-a>", {desc = "Increment number"})
@@ -34,15 +34,15 @@ map("n", "<A-h>", "<C-w><3", {desc = "Decrease current window width"})
 map("n", "<A-l>", "<C-w>>3", {desc = "Increase current window width"})
 
 
-map({ "n", "t" }, "<leader>v", function()
+map({ "n", "t" }, "<A-v>", function()
   require("nvchad.term").toggle { pos = "vsp", id = "vtoggleTerm", size = 0.3 }
 end, { desc = "Terminal Toggleable vertical term" })
 
-map({ "n", "t" }, "<leader>h", function()
+map({ "n", "t" }, "<A-h>", function()
   require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm", size = 0.3 }
 end, { desc = "Terminal New horizontal term" })
 
-map({ "n", "t" }, "<leader>t", function()
+map({ "n", "t" }, "<A-t>", function()
   require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
 end, { desc = "Terminal Toggle Floating term" })
 
@@ -66,7 +66,7 @@ map("i", "<A-d>", "<Plug>(copilot-dismiss)", {desc = "Copilot dismiss"})
 map("i", "<A-n>", "<Plug>(copilot-next)", {desc = "Copilot next"})
 map("i", "<A-p>", "<Plug>(copilot-previous)", {desc = "Copilot previous"})
 map("i", "<A-w>", "<Plug>(copilot-accept-word)", {desc = "Copilot accept"})
-map("i", "<A-l>", "<Plug>(copilot-accept-line)", {desc = "Copilot accept line"})
+map("i", "<A-a>", "<Plug>(copilot-accept-line)", {desc = "Copilot accept line"})
 
 -- custom keys for folding
 map("n", "<leader>op", "zo", {desc = "Fold open"})

@@ -46,7 +46,10 @@ vim.schedule(function()
   require "mappings"
 end)
 
+-- vim.cmd([[set timeoutlen=500]])
+require("custom.window-separator")
 require("custom.tex")
 require('custom.custom-colour')
 -- require('custom.color-scheme')
 -- require('custom.fold')
+-- vim.cmd([[set cmdheight=2]])
