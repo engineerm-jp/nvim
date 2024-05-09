@@ -53,3 +53,14 @@ require('custom.custom-colour')
 -- require('custom.color-scheme')
 -- require('custom.fold')
 -- vim.cmd([[set cmdheight=2]])
+
+require('telescope').setup{
+    extensions = {
+        bibtex = {
+            global_files = {"D:\\OneDrive - The University of Auckland\\Uni\\PhD\\Documents\\Research\\Literature Review\\References\\ref.bib"}
+        },
+    },
+}
+
+
+
