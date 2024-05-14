@@ -7,6 +7,7 @@ local option = vim.opt
 
 map("n", ";", ":", { desc = "cmd enter command mode" })
 map("i", "jk", "<esc>")
+map("n", "<leader>jk", "<cmd>noh<CR>")
 map("n", "<leader>nh", "<cmd>noh<CR>", {desc = "Delete highlight"})
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
@@ -34,15 +35,15 @@ map("n", "<A-h>", "<C-w><3", {desc = "Decrease current window width"})
 map("n", "<A-l>", "<C-w>>3", {desc = "Increase current window width"})
 
 
-map({ "n", "t" }, "<leader><leader>v", function()
+map({ "n", "t" }, "<A-v>", function()
   require("nvchad.term").toggle { pos = "vsp", id = "vtoggleTerm", size = 0.3 }
 end, { desc = "Terminal Toggleable vertical term" })
 
-map({ "n", "t" }, "<leader><leader>h", function()
+map({ "n", "t" }, "<A-h>", function()
   require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm", size = 0.3 }
 end, { desc = "Terminal New horizontal term" })
 
-map({ "n", "t" }, "<leader><leader>t", function()
+map({ "n", "t" }, "<A-t>", function()
   require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
 end, { desc = "Terminal Toggle Floating term" })
 
