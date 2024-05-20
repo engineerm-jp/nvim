@@ -55,7 +55,7 @@ map("n", "cl", "s")
 map("n", "cc", "S")
 
 map("n", "<leader>gs", '<Plug>(leap-from-window)', {desc = "Leap search from window"})
-map("n", "s", '<Plug>(leap)', {desc = "Leap search (both directions)"})
+map({"n", "v"}, "s", '<Plug>(leap)', {desc = "Leap search (both directions)"})
 
 
 map("n", "<leader>e", "$", {desc = "Move to the end of line"})
@@ -77,7 +77,8 @@ map("n", "<leader>cl", "zc", {desc = "Fold close"})
 map({"n", "v"}, "<leader>ih", "< ", {desc = "Indent - Left"})
 map({"n", "v"}, "<leader>il", "> ", {desc = "Indent - Right"})
 
-
+-- custom mapping for cursor placement
+map("n", "<leader><leader>", "zz", {desc = "Place cursor to the middle of the window"})
 
 
 
