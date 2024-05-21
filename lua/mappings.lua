@@ -7,6 +7,7 @@ local option = vim.opt
 
 map("n", ";", ":", { desc = "cmd enter command mode" })
 map("i", "jk", "<esc>")
+map("i", "JK", "<esc>")
 map("n", "<leader>jk", "<cmd>noh<CR>")
 map("n", "<leader>nh", "<cmd>noh<CR>", {desc = "Delete highlight"})
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
