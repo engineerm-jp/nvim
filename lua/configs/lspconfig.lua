@@ -24,7 +24,8 @@ lspconfig.tsserver.setup {
 
 -- python3
 lspconfig.pyright.setup({
-    on_attach = on_attach, 
+    on_attach = on_attach,
     capabilities = capabilities,
     filetypes = {"python"},
 })
+

@@ -51,12 +51,12 @@ end, { desc = "Terminal Toggle Floating term" })
 -- TAB length
 option.shiftwidth = 4
 
--- custom key mappings for leap
-map("n", "cl", "s")
-map("n", "cc", "S")
+-- -- custom key mappings for leap
+-- map("n", "cl", "s")
+-- map("n", "cc", "S")
 
-map("n", "<leader>gs", '<Plug>(leap-from-window)', {desc = "Leap search from window"})
-map({"n", "v"}, "s", '<Plug>(leap)', {desc = "Leap search (both directions)"})
+-- map("n", "gs", '<Plug>(leap-from-window)', {desc = "Leap search from window"})
+-- map({"n", "v"}, "s", '<Plug>(leap)', {desc = "Leap search (both directions)"})
 
 
 map("n", "<leader>e", "$", {desc = "Move to the end of line"})
@@ -67,8 +67,9 @@ map("i", "<A-s>", "<Plug>(copilot-suggest)", {desc = "Copilot suggest"})
 map("i", "<A-d>", "<Plug>(copilot-dismiss)", {desc = "Copilot dismiss"})
 map("i", "<A-n>", "<Plug>(copilot-next)", {desc = "Copilot next"})
 map("i", "<A-p>", "<Plug>(copilot-previous)", {desc = "Copilot previous"})
+
 map("i", "<A-w>", "<Plug>(copilot-accept-word)", {desc = "Copilot accept"})
-map("i", "<A-a>", "<Plug>(copilot-accept-line)", {desc = "Copilot accept line"})
+map("i", "<C><TAB>", "<Plug>(copilot-accept-line)", {desc = "Copilot accept line"})
 
 -- custom keys for folding
 map("n", "<leader>op", "zo", {desc = "Fold open"})
@@ -81,5 +82,22 @@ map({"n", "v"}, "<leader>il", "> ", {desc = "Indent - Right"})
 -- custom mapping for cursor placement
 map("n", "<leader><leader>", "zz", {desc = "Place cursor to the middle of the window"})
 
+map("c", "<C-TAB>", "<UP>", {desc = "Cmd previous"})
+map("c", "<S><TAB>", "<DOWN>", {desc = "Cmd next"})
+
+
+-- map("t", "jk", "<ESC>", {desc = "Cmd ESC"})
+-- map("t", "<C><TAB>", "<UP>", {desc = "Cmd previous"})
+-- map("t", "<S><TAB>", "<DOWN>", {desc = "Cmd next"})
+
+
+map("n", "<leader>fs", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Telescope Find in current buffer" })
+
+-- move tabs
+map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
+map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
+
+
+map("n", "<leader>rp", '"0p', { desc = "Next Buffer" })
 
 
