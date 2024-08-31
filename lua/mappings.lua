@@ -76,8 +76,8 @@ map("n", "<leader>op", "zo", {desc = "Fold open"})
 map("n", "<leader>cl", "zc", {desc = "Fold close"})
 
 -- custom keys for indentation
-map({"n", "v"}, "<leader>ih", "< ", {desc = "Indent - Left"})
-map({"n", "v"}, "<leader>il", "> ", {desc = "Indent - Right"})
+-- map({}, "<leader>ih", "< ", {desc = "Indent - Left"})
+-- map({}, "<leader>il", "> ", {desc = "Indent - Right"})
 
 -- custom mapping for cursor placement
 map("n", "<leader><leader>", "zz", {desc = "Place cursor to the middle of the window"})
@@ -101,3 +101,4 @@ map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 map("n", "<leader>rp", '"0p', { desc = "Next Buffer" })
 
 
+map("v", "p", '"_dP"', { desc = "Next Buffer" })
