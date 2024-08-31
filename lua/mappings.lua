@@ -98,7 +98,7 @@ map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 
 
-map("n", "<leader>rp", '"0p', { desc = "Next Buffer" })
+map("n", "<leader>rp", '"0p', { desc = "Paste 0" })
 
 
-map("v", "p", '"_dP"', { desc = "Next Buffer" })
+map("v", "p", '"_dP"', { desc = "Paste" })
