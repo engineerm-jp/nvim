@@ -78,6 +78,10 @@ map("n", "<leader>cl", "zc", {desc = "Fold close"})
 -- custom keys for indentation
 -- map({}, "<leader>ih", "< ", {desc = "Indent - Left"})
 -- map({}, "<leader>il", "> ", {desc = "Indent - Right"})
+map({"n"}, "<", "<<", {desc = "Indent - Left"})
+map({"n"}, ">", ">>", {desc = "Indent - Right"})
+map({"v"}, "<", "<gv", {desc = "Indent - Left"})
+map({"v"}, ">", ">gv", {desc = "Indent - Right"})
 
 -- custom mapping for cursor placement
 map("n", "<leader><leader>", "zz", {desc = "Place cursor to the middle of the window"})
