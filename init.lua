@@ -2,9 +2,9 @@ vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
 vim.g.mapleader = " "
 
 
+local lazy_config = require "configs.lazy"
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 vim.opt.rtp:prepend(lazypath)
-local lazy_config = require "configs.lazy"
 
 if not vim.loop.fs_stat(lazypath) then
     local repo = "https://github.com/folke/lazy.nvim.git"
@@ -43,19 +43,19 @@ end
     end)
 
     -- vim.cmd([[set timeoutlen=500]])
-    require("custom.window-separator")
+    -- require("custom.window-separator")
     require("custom.tex")
-    require("custom.markdown")
+    -- require("custom.markdown")
     -- require('custom.color-scheme')
     -- require('custom.fold')
     -- vim.cmd([[set cmdheight=2]])
 
     require('telescope').setup{
-        extensions = {
-            bibtex = {
-                global_files = {"D:\\OneDrive - The University of Auckland\\Uni\\PhD\\Documents\\Research\\Literature Review\\References\\ref.bib"}
-            },
-        },
+        -- extensions = {
+        --     bibtex = {
+        --         global_files = {"D:\\OneDrive - The University of Auckland\\Uni\\PhD\\Documents\\Research\\Literature Review\\References\\ref.bib"}
+        --     },
+        -- },
         defaults = {
             layout_strategy = "vertical",
             layout_config = {
