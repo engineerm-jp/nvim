@@ -74,4 +74,14 @@ end
 
     require('custom.custom-colour')
     require("custom.cmp")
+    -- require('plugins.disable_list')
+
+
+
+
+
+
+
+
+
 

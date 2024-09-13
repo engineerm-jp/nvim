@@ -87,9 +87,16 @@ return {
   },
 
 
+    -- {
+    --     "NvChad/ui",
+    --     config = function()
+    --     vim.opt.statusline=""
+    --     end
+    -- },
   -- {
   --   "github/copilot.vim",
   --   config = true,
   -- },
 
+    -- require('plugins.lualine')
 }
