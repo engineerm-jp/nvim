@@ -1,77 +1,68 @@
-vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
-vim.g.mapleader = " "
+
+local cmd = vim.cmd
+local o = vim.o
+local keymap = vim.keymap
+
+-- Set colorscheme
 
 
-local lazy_config = require "configs.lazy"
-local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
-vim.opt.rtp:prepend(lazypath)
+require("config.options")
+require("config.lazy")
 
-if not vim.loop.fs_stat(lazypath) then
-    local repo = "https://github.com/folke/lazy.nvim.git"
-    vim.fn.system {
-        "git", "clone",
-        "--filter=blob:none",
-        repo,
-        "--branch=stable",
-        lazypath,
-    }
+-- require("mason").setup()
+
+require("config.lsp_config")
+
+
+require("tokyonight").setup({
+    transparent = true,
+    styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+    },
+})
+
+
+cmd([[colorscheme tokyonight-night]])
+
+-- Plugin options
+require('lualine').setup {}
+
+require'nvim-treesitter.configs'.setup {
+    highlight = {
+        enable = true,
+    },
+}
+
+
+
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true
+}
+
+local language_servers = require("lspconfig").util.available_servers() -- or list servers manually like {'gopls', 'clangd'}
+for _, ls in ipairs(language_servers) do
+    require('lspconfig')[ls].setup({
+        capabilities = capabilities
+        -- you can add other fields for setting up lsp server in this table
+    })
 end
+--
+-- local actions = require("telescope.actions")
+--
+-- require("telescope").setup({
+--     defaults = {
+--         mappings = {
+--             i = {
+--                 ["qq"] = actions.close,
+--             },
+--         },
+--     },
+-- })
 
-    -- load plugins
-    require("lazy").setup({
-      {
-        "NvChad/NvChad",
-        lazy = false,
-        branch = "v2.5",
-        import = "nvchad.plugins",
-        config = function()
-          require "options"
-        end,
-      },
-
-      { import = "plugins" },
-
-    }, lazy_config)
-
-    dofile(vim.g.base46_cache .. "defaults")
-    dofile(vim.g.base46_cache .. "statusline")
-
-    require "nvchad.autocmds"
-
-    vim.schedule(function()
-      require "mappings"
-    end)
-
-    -- vim.cmd([[set timeoutlen=500]])
-    -- require("custom.window-separator")
-    require("custom.tex")
-    -- require("custom.markdown")
-    -- require('custom.color-scheme')
-    -- require('custom.fold')
-    -- vim.cmd([[set cmdheight=2]])
-
-    require('telescope').setup{
-        -- extensions = {
-        --     bibtex = {
-        --         global_files = {"D:\\OneDrive - The University of Auckland\\Uni\\PhD\\Documents\\Research\\Literature Review\\References\\ref.bib"}
-        --     },
-        -- },
-        defaults = {
-            layout_strategy = "vertical",
-            layout_config = {
-                prompt_position = "top",
-                vertical = {
-                    sorting_strategy = "ascending",
-                    height = function(_, _, max_lines) return max_lines end,
-                    width = 120,
-                    preview_cutoff = 0,
-                    preview_height = 30,
-                    mirror = true,
-                },
-            },
-        },
-    }
-
-    require('custom.custom-colour')
-    require("custom.cmp")
-
+require('ufo').setup()
+require("config.keymaps")
+require("config.color")
