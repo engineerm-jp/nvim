@@ -4,7 +4,6 @@ vim.api.nvim_set_hl(0, '@comment', {link = "Comment"})
 -- vim.api.nvim_set_hl(0, 'GitSignsChange', {fg = "DarkRed", bg="#280000"})
 vim.api.nvim_set_hl(0, 'GitSignsChange', {fg = "DarkRed"})
 -- vim.api.nvim_set_hl(0, 'GitSignsChangeLn', {bg="#031C00"})
--- set background to none
 vim.api.nvim_set_hl(0, "normal", {guibg=NONE})
 vim.api.nvim_set_hl(0, "linenr", {fg = '#a0a8cd'})
 vim.api.nvim_set_hl(0, "visual", {bg="#414190"})
