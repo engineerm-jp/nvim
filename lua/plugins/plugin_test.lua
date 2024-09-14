@@ -9,7 +9,6 @@ return {
 
     { "nvim-tree/nvim-web-devicons", lazy = true },
 
-
     -- Auto save
     {
       "Pocco81/auto-save.nvim",
@@ -18,16 +17,10 @@ return {
     },
 
     {
-	'kevinhwang91/nvim-ufo',
-	dependencies = {'kevinhwang91/promise-async'}
-    },
-
-    {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig",
     },
-
 
     {
         "github/copilot.vim",

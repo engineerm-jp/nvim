@@ -51,35 +51,35 @@ return {
             lualine_b = {'branch'},
             lualine_c = {'filename'},
             lualine_z = {'tabs', 
-		mode =1,
+	    mode      = 1,
 		},
         },
 
         winbar = {
-			--          lualine_a = {
-			--    sections = {
-			--   lualine_a = {
-			--     {
-			--       'datetime',
-			--       -- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
-			--       style = 'default'
-			--     }
-			--   }
-			-- }
-			--   },
-			--          lualine_b = {},
-			--          lualine_c = {'filename'},
-			--          lualine_x = {},
-			--          lualine_y = {},
-			--          lualine_z = {}
+	    lualine_a = {
+		sections = {
+		    lualine_a = {
+			{
+			    'datetime',
+			      -- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
+			    style = 'default'
+			}
+		    }
+		}
+	    },
+	    lualine_b = {},
+	    lualine_c = {'filename'},
+	    lualine_x = {},
+	    lualine_y = {},
+	    lualine_z = {}
         },
         inactive_winbar = {
-	  --          lualine_a = {},
-	  -- LUALINE_B = {},
-	  -- LUALINE_C = {'filename'},
-	  -- LUALINE_X = {},
-	  -- LUALINE_Y = {},
-	  -- LUALINE_Z = {}
+	    lualine_a = {},
+	    lualine_b = {},
+	    lualine_c = {'filename'},
+	    lualine_x = {},
+	    lualine_y = {},
+	    lualine_z = {}
         },
         extensions = {}
 }
