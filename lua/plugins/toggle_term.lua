@@ -8,6 +8,7 @@ return {
     -- or
     {'akinsho/toggleterm.nvim', version = "*",
 	opts = {--[[ things you want to change go here]]
+	    close_on_exit = false,
 	    highlights = {
 		FloatBorder = {
 		    guifg = '#66c2b5'
@@ -18,7 +19,6 @@ return {
 		border = 'single',
 		width = 150,
 		height = 50,
-		close_on_exit = false,
 		-- winblend = 300,
 	    }
 	}
