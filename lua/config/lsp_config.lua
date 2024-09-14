@@ -1,4 +1,10 @@
-require("mason").setup()
+require("mason").setup(
+    {
+	ensure_installed = {
+	    "black",
+	}
+    }
+)
 
 require("mason-lspconfig").setup({
 	ensure_installed = {
@@ -21,6 +27,6 @@ require("lspconfig").lua_ls.setup({
         },
     },
 })
-
+ 
 require("lspconfig").yamlls.setup({})
 require("lspconfig").jsonls.setup({})

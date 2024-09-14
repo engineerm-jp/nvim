@@ -2,6 +2,8 @@ local opt = vim.opt
 local g = vim.g
 local fn = vim.fn
 
+g.vscode = true
+
 opt.autoindent = true
 opt.ignorecase = true
 
@@ -16,19 +18,17 @@ opt.ignorecase = true
 opt.smartcase = true
 
 opt.wrap = false
-
 opt.clipboard:append{'unnamedplus'}
 
+-- Fold options
 opt.foldcolumn = '1' -- '0' is not bad
 opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 opt.foldlevelstart = 99
 opt.foldenable = true
+
 -- opt.termguicolors = true
 -- opt.winblend = 0
 -- vim.opt.pumblend = 0
---
---
---
 
 -- Set PowerShell options
 local powershell_options = {

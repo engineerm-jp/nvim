@@ -1,7 +1,5 @@
 
 local cmd = vim.cmd
-local o = vim.o
-local keymap = vim.keymap
 
 -- Set colorscheme
 
