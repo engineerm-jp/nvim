@@ -43,3 +43,4 @@ local powershell_options = {
 for option, value in pairs(powershell_options) do
   opt[option] = value
 end
+vim.opt.termguicolors = true

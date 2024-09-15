@@ -4,7 +4,7 @@ return {
       "williamboman/mason.nvim",
     },
   
-    { "folke/which-key.nvim", lazy = false },
+    { "folke/which-key.nvim", lazy = true },
   
 
     { "nvim-tree/nvim-web-devicons", lazy = true },
