@@ -67,6 +67,7 @@ local telescope_buildin = require('telescope.builtin')
 map('n', '<leader>ff', telescope_buildin.find_files, {})
 -- map('n', '<leader>ff', telescope_buildin.live_grep, {})
 map("n", "<leader>fs", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Telescope Find in current buffer" })
+-- map("n", "qq", telescope_actions.close, { desc = "Telescope Find in current buffer" })
 
 -- move tabs
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })

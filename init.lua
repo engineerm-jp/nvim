@@ -77,3 +77,16 @@ require("noice").setup({
       enabled = false,
   }
 })
+
+
+local telescope_actions = require('telescope.actions')
+require("telescope").setup({
+    defaults = {
+	mappings = {
+	    n = {
+		['<leader>jk'] = telescope_actions.close
+	    }
+	}
+    }
+})
+
