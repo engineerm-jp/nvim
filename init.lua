@@ -55,6 +55,7 @@ require("config.keymaps")
 require("config.lualine_config")
 require("bufferline").setup{}
 require("config.color")
+require("config.autocmd")
 
 require("noice").setup({
   lsp = {
@@ -80,7 +81,11 @@ require("noice").setup({
 
 
 local telescope_actions = require('telescope.actions')
+
 require("telescope").setup({
+    pickers = {
+	current_buffer_fuzzy_find = { sorting_strategy = 'ascending' },
+    },
     defaults = {
 	mappings = {
 	    n = {
@@ -89,4 +94,7 @@ require("telescope").setup({
 	}
     }
 })
+
+-- require('telescope').load_extension('fzf')
+
 

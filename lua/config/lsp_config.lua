@@ -13,6 +13,7 @@ require("mason-lspconfig").setup({
 		"matlab_ls",
 		"jsonls",
 		"yamlls",
+		"texlab",
 	},
 })
 
@@ -30,3 +31,4 @@ require("lspconfig").lua_ls.setup({
  
 require("lspconfig").yamlls.setup({})
 require("lspconfig").jsonls.setup({})
+require("lspconfig").texlab.setup({})
