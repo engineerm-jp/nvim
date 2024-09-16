@@ -31,16 +31,26 @@ opt.foldenable = true
 -- vim.opt.pumblend = 0
 
 -- Set PowerShell options
-local powershell_options = {
-  shell = fn.executable "pwsh" == 1 and "pwsh" or "powershell",
-  shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
-  shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
-  shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
-  shellquote = "",
-  shellxquote = "",
-}
+--
+--
+--
+local is_windows = vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 or vim.fn.has("win16") == 1
 
-for option, value in pairs(powershell_options) do
-  opt[option] = value
+if is_windows then
+    local powershell_options = {
+      shell = fn.executable "pwsh" == 1 and "pwsh" or "powershell",
+      shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
+      shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
+      shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
+      shellquote = "",
+      shellxquote = "",
+    }
+
+    for option, value in pairs(powershell_options) do
+      opt[option] = value
+    end
+    vim.opt.termguicolors = true
 end
-vim.opt.termguicolors = true
+
+
+
