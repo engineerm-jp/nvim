@@ -50,6 +50,7 @@ end
 --         },
 --     },
 -- })
+
 require('ufo').setup()
 require("config.keymaps")
 require("config.lualine_config")
@@ -82,16 +83,25 @@ require("noice").setup({
 
 local telescope_actions = require('telescope.actions')
 
+
 require("telescope").setup({
+    -- file_sorter = require("telescope.sorters" ).get_fzy_sorter,
     pickers = {
 	current_buffer_fuzzy_find = { sorting_strategy = 'ascending' },
     },
+
     defaults = {
+	-- file_ignore_patterns = {'^./.git/'},
 	mappings = {
 	    n = {
 		['<leader>jk'] = telescope_actions.close
 	    }
-	}
+	},
+
+	path_display = {
+	    "filename_first",
+	    reverse_directories = false,
+	},
     }
 })
 

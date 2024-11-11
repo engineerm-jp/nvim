@@ -3,22 +3,22 @@ return {
     -- { 'nvim-telescope/telescope-fzf-native.nvim', build = 'gcc' },
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release ; cmake --build build --config Release' },
     {
-      'nvim-telescope/telescope.nvim', tag = '0.1.8',
+      'nvim-telescope/telescope.nvim',
         dependencies = { 'nvim-lua/plenary.nvim' },
         opts = {
           defaults = {
-          layout_strategy = "vertical",
-          layout_config = {
-              prompt_position = "top",
-              vertical = {
-                  height = function(_, _, max_lines) return max_lines end,
-                  width = 120,
-                  preview_cutoff = 0,
-                  preview_height = 30,
-                  mirror = true,
-              },
-          },
-      },
+	      layout_strategy = "vertical",
+	      layout_config = {
+		  prompt_position = "top",
+		  vertical = {
+		      height = function(_, _, max_lines) return max_lines end,
+		      width = 120,
+		      preview_cutoff = 0,
+		      preview_height = 30,
+		      mirror = true,
+		  },
+	      },
+	  },
     },
     extensions = {
     fzf = {

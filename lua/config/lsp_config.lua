@@ -32,3 +32,4 @@ require("lspconfig").lua_ls.setup({
 require("lspconfig").yamlls.setup({})
 require("lspconfig").jsonls.setup({})
 require("lspconfig").texlab.setup({})
+require("lspconfig").matlab_ls.setup({})

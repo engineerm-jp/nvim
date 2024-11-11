@@ -34,6 +34,20 @@ local conditions = {
   end,
 }
 
+local function get_venv(variable)
+  local venv = os.getenv(variable)
+  if venv ~= nil and string.find(venv, "/") then
+    local orig_venv = venv
+    for w in orig_venv:gmatch("([^/]+)") do
+      venv = w
+    end
+    venv = string.format("%s", venv)
+  end
+  return venv
+end
+
+
+
 -- Config
 local config = {
   options = {
@@ -129,6 +143,16 @@ ins_left {
 --   -- 'filesize',
 --   -- cond = conditions.buffer_not_empty,
 -- }
+
+ins_left {
+    -- cond = function() return vim.bo.filetype == "python" end,
+    function()
+	local venv = get_venv("CONDA_DEFAULT_ENV") or get_venv("VIRTUAL_ENV") or "NO ENV"
+	local val = "(" .. venv .. ")"
+	return val
+    end
+    -- color = { fg = colors.magenta, gui = 'bold' },
+}
 
 ins_left {
   'filename',
