@@ -14,6 +14,7 @@ require("mason-lspconfig").setup({
 		"jsonls",
 		"yamlls",
 		"texlab",
+		"clangd",
 	},
 })
 
@@ -33,3 +34,4 @@ require("lspconfig").yamlls.setup({})
 require("lspconfig").jsonls.setup({})
 require("lspconfig").texlab.setup({})
 require("lspconfig").matlab_ls.setup({})
+require("lspconfig").clangd.setup({})

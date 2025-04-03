@@ -20,7 +20,9 @@ return {
 		width = 150,
 		height = 50,
 		-- winblend = 300,
-	    }
+	    },
+	    start_in_insert = true,
+	    insert_mappings = true,
 	}
     },
 }

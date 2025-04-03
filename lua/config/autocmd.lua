@@ -12,13 +12,10 @@ vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, {
     end,
 })
 
-vim.api.nvim_create_autocmd({'FileType'}, {
-    pattern = { "tex", "bib" },
-    group = augroup,
-    callback = function()
-        vim.cmd([[
-            setlocal wrap
-            setlocal breakindent
-            ]])
-    end,
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "tex",
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+  end,
 })
