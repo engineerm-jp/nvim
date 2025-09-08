@@ -103,19 +103,78 @@ map({"n"}, "<C-f>", "za", { desc = "Toggle fold" })
 map('n', 'zR', require('ufo').openAllFolds)
 map('n', 'zM', require('ufo').closeAllFolds)
 
--- Delete buffer
-map({"n"}, "<leader>x", "<cmd>q<CR>", { desc = "Delete buffer" })
+-- -- Delete buffer
+-- map({"n"}, "<leader>x", "<cmd>q<CR>", { desc = "Delete buffer" })
 
+-- Delete buffer
+local function smart_buffer_delete()
+  local current_buf = vim.api.nvim_get_current_buf()
+  local buffers = vim.api.nvim_list_bufs()
+  
+  -- Filter out unlisted buffers and the current buffer
+  local valid_buffers = {}
+  for _, buf in ipairs(buffers) do
+    if vim.api.nvim_buf_is_loaded(buf) and vim.api.nvim_buf_get_option(buf, 'buflisted') and buf ~= current_buf then
+      table.insert(valid_buffers, buf)
+    end
+  end
+  
+  -- If there are other buffers, switch to the next one, or previous if no next
+  if #valid_buffers > 0 then
+    -- Try to find the next buffer in the buffer list
+    local current_index = nil
+    for i, buf in ipairs(buffers) do
+      if buf == current_buf then
+        current_index = i
+        break
+      end
+    end
+    
+    -- Find next valid buffer
+    local next_buf = nil
+    if current_index then
+      for i = current_index + 1, #buffers do
+        if vim.api.nvim_buf_is_loaded(buffers[i]) and vim.api.nvim_buf_get_option(buffers[i], 'buflisted') then
+          next_buf = buffers[i]
+          break
+        end
+      end
+      
+      -- If no next buffer found, try previous
+      if not next_buf then
+        for i = current_index - 1, 1, -1 do
+          if vim.api.nvim_buf_is_loaded(buffers[i]) and vim.api.nvim_buf_get_option(buffers[i], 'buflisted') then
+            next_buf = buffers[i]
+            break
+          end
+        end
+      end
+    end
+    
+    -- Switch to the found buffer or first valid buffer
+    vim.api.nvim_set_current_buf(next_buf or valid_buffers[1])
+  else
+    -- No other buffers, create a new empty buffer
+    vim.cmd('enew')
+  end
+  
+  -- Delete the original buffer
+  vim.api.nvim_buf_delete(current_buf, { force = false })
+end
+
+-- map({"n"}, "<leader>x", smart_buffer_delete, { desc = "Delete buffer" })
+map({"n"}, "<leader>x", "<cmd>close<cr>", { desc = "Delete buffer" })
 -- copilot chat
 -- map({"n", "v"}, "<C-i>",  "<c-w>s<c-w>j<cmd>CopilotChatToggle<CR>", { desc = "Copilot chat toggle" })
 local vim = vim
+
 
 local function toggle_copilot_chat()
   local chat_buf = vim.fn.bufnr('^copilot-chat$')
   local chat_win = vim.fn.bufwinnr(chat_buf)
   -- print("chat_win:", chat_win)  -- Debugging statement to check the value of chat_win
   if chat_win == -1 then
-    vim.cmd('split | wincmd j | CopilotChatToggle')
+    vim.cmd('rightbelow vsplit | CopilotChatToggle')
     vim.cmd('startinsert')
   else
       vim.cmd('CopilotChatToggle')
@@ -128,7 +187,7 @@ local function use_copilot_chat()
   local chat_win = vim.fn.bufwinnr(chat_buf)
   -- print("chat_win:", chat_win)  -- Debugging statement to check the value of chat_win
   if chat_win == -1 then
-    vim.cmd('split | wincmd j | CopilotChatToggle')
+    vim.cmd('rightbelow vsplit | CopilotChatToggle')
   else
     vim.api.nvim_set_current_win(vim.fn.win_getid(chat_win))
   end

@@ -28,7 +28,9 @@ return {
 	    row = 3,
 	    col = 0,
 	    width = 0.6,
-	}
+	},
+
+	model = 'claude-sonnet-4'
     },
     -- See Commands section for default commands if you want to lazy load on them
     lazy = false,
