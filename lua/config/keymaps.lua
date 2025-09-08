@@ -23,11 +23,15 @@ map("n", "<leader>se", "<c-w>=", {desc = "Equal split"})
 map("n", "<leader>sx", "<cmd>close<cr>", {desc = "close surrent split"})
 
 -- move between windows
-map({"n", "t", "c"}, "<C-h>", "<C-w>h", { desc = "Move to the left window" })
-map({"n", "t", "c"}, "<C-j>", "<C-w>j", { desc = "Move to the lower window" })
-map({"n", "t", "c"}, "<C-k>", "<C-w>k", { desc = "Move to the upper window" })
-map({"n", "t", "c"}, "<C-l>", "<C-w>l", { desc = "Move to the right window" })
+-- map({"n", "t", "c"}, "<C-h>", "<C-w>h", { desc = "Move to the left window" })
+-- map({"n", "t", "c"}, "<C-j>", "<C-w>j", { desc = "Move to the lower window" })
+-- map({"n", "t", "c"}, "<C-k>", "<C-w>k", { desc = "Move to the upper window" })
+-- map({"n", "t", "c"}, "<C-l>", "<C-w>l", { desc = "Move to the right window" })
 
+map({"t", "c"}, "<C-h>", "<C-w>h", { desc = "Move to the left window" })
+map({"t", "c"}, "<C-j>", "<C-w>j", { desc = "Move to the lower window" })
+map({"t", "c"}, "<C-k>", "<C-w>k", { desc = "Move to the upper window" })
+map({"t", "c"}, "<C-l>", "<C-w>l", { desc = "Move to the right window" })
 -- move cursor during insert mode
 map({"i", "t"}, "<C-h>", "<LEFT>", { desc = "Move left" })
 map({"i", "t"}, "<C-j>", "<DOWN>", { desc = "Move down"})
