@@ -116,3 +116,12 @@ local Terminal  = require('toggleterm.terminal').Terminal
 -- end
 --
 -- vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+
+
+
+
+-- Center pad
+vim.keymap.set('n', '<leader>z',
+  "<cmd>lua require'centerpad'.toggle{ leftpad = 45, rightpad = 45 }<cr>",
+  { desc = "Toggle Centered Buffer" }
+)
